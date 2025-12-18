@@ -5,21 +5,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('L10nConfig tests', () {
-    test('finalOutputDir returns default value if syntheticPackage is true',
-        () {
-      final l10nConfig = L10nConfig(
-        arbDir: 'lib/l10n',
-        templateArbFile: 'app_en.arb',
-        outputClass: 'AppLocalizations',
-        outputLocalizationFile: 'app_localizations.dart',
-        outputDir: 'lib/generated',
-        syntheticPackage: true,
-      );
-      expect(l10nConfig.finalOutputDir, '.dart_tool/flutter_gen/gen_l10n');
-    });
-
     test(
-        'finalOutputDir returns outputDir value if syntheticPackage is false and outputDir is specified',
+        'finalOutputDir returns outputDir value if outputDir is specified',
         () {
       final l10nConfig = L10nConfig(
         arbDir: 'lib/l10n',
@@ -27,13 +14,12 @@ void main() {
         outputClass: 'AppLocalizations',
         outputLocalizationFile: 'app_localizations.dart',
         outputDir: 'lib/generated',
-        syntheticPackage: false,
       );
       expect(l10nConfig.finalOutputDir, l10nConfig.finalOutputDir);
     });
 
     test(
-        'finalOutputDir returns arbDir value if syntheticPackage is false and outputDir is not specified',
+        'finalOutputDir returns arbDir value if outputDir is not specified',
         () {
       final l10nConfig = L10nConfig(
         arbDir: 'lib/l10n',
@@ -41,7 +27,6 @@ void main() {
         outputClass: 'AppLocalizations',
         outputLocalizationFile: 'app_localizations.dart',
         outputDir: null,
-        syntheticPackage: false,
       );
       expect(l10nConfig.finalOutputDir, l10nConfig.arbDir);
     });
@@ -60,7 +45,6 @@ void main() {
         output-localization-file: app_localizations.dart
         output-dir: lib/generated
         output-class: AppLocalizations
-        synthetic-package: false
       ''');
 
       final l10nConfig = await L10nConfig.getL10nConfig();
@@ -69,7 +53,6 @@ void main() {
       expect(l10nConfig.outputLocalizationFile, 'app_localizations.dart');
       expect(l10nConfig.outputDir, 'lib/generated');
       expect(l10nConfig.outputClass, 'AppLocalizations');
-      expect(l10nConfig.syntheticPackage, false);
 
       // Delete the temporary l10n.yaml file
       await l10nYamlFile.delete();

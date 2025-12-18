@@ -38,7 +38,6 @@ void main() {
         outputLocalizationFile: 'app_localizations.dart',
         outputDir: null,
         outputClass: 'AppLocalizations',
-        syntheticPackage: true,
         useNamedParameters: true,
       );
 

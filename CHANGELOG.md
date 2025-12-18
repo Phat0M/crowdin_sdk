@@ -16,7 +16,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 - feat: expose downloaded manifest statically + check if locale is supported according to manifest
 - feat: stop requests when distribution deleted
-- docs: flutter_gen synthetic package migration
+- docs: update gen_l10n output/import guidance
 
 ## 0.7.0
 

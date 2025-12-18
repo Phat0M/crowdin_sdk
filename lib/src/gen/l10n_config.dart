@@ -1,4 +1,5 @@
 import 'dart:io';
+
 import 'package:yaml/yaml.dart' as yaml;
 
 //possible configuration from l10n.yaml
@@ -10,7 +11,6 @@ class L10nConfig {
   String outputLocalizationFile;
   String templateArbFile;
   String outputClass;
-  bool syntheticPackage;
   bool useNamedParameters;
 
   L10nConfig({
@@ -19,13 +19,10 @@ class L10nConfig {
     required this.outputLocalizationFile,
     required this.outputDir,
     required this.outputClass,
-    this.syntheticPackage = true,
     this.useNamedParameters = false,
   });
 
-  String get finalOutputDir => syntheticPackage
-      ? '.dart_tool/flutter_gen/gen_l10n'
-      : outputDir ?? arbDir;
+  String get finalOutputDir => outputDir ?? arbDir;
 
   static Future<L10nConfig> getL10nConfig() async {
     if (await File('l10n.yaml').exists()) {
@@ -43,8 +40,6 @@ class L10nConfig {
 
       String outputClass = yamlGenConfig['output-class'] ?? 'AppLocalizations';
 
-      bool syntheticPackage = yamlGenConfig['synthetic-package'] ?? true;
-
       bool useNamedParameters = yamlGenConfig['use-named-parameters'] ?? false;
 
       return L10nConfig(
@@ -52,7 +47,6 @@ class L10nConfig {
         templateArbFile: templateArbFile,
         outputClass: outputClass,
         outputDir: outputDir,
-        syntheticPackage: syntheticPackage,
         outputLocalizationFile: outputLocalizationFile,
         useNamedParameters: useNamedParameters,
       );
