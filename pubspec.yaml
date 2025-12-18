@@ -1,8 +1,8 @@
 name: crowdin_sdk
 description: Crowdin Flutter SDK for instant translation delivery Over-The-Air directly to your application
 version: 0.8.1
-repository: https://github.com/crowdin/flutter-sdk
-homepage: https://github.com/crowdin/flutter-sdk
+repository: https://every.gitlab.yandexcloud.net/every/crowdin_sdk
+homepage: https://every.gitlab.yandexcloud.net/every/crowdin_sdk
 
 environment:
   sdk: '>=2.17.0 <4.0.0'
@@ -13,14 +13,14 @@ dependencies:
     sdk: flutter
   http: '>=0.13.3 <2.0.0'
   intl: '>=0.17.0 <=0.20.2'
-  shared_preferences: ^2.0.4
-  connectivity_plus: '>=2.1.0 <7.0.0'
-  yaml: ^3.1.1
-  meta: ^1.7.0
-  path: ^1.8.1
-  oauth2: ^2.0.1
-  url_launcher: ^6.1.0
-  app_links: '>=3.4.2 <7.0.0'
+  shared_preferences: '>=2.0.4 <3.0.0'
+  connectivity_plus: '>=6.1.5 <7.0.0'
+  yaml: '>=3.1.1 <4.0.0'
+  meta: '>=1.7.0 <2.0.0'
+  path: '>=1.8.1 <2.0.0'
+  oauth2: '>=2.0.1 <3.0.0'
+  url_launcher: '>=6.1.0 <7.0.0'
+  app_links: '>=7.0.0 <8.0.0'
   web_socket_channel: '>=2.2.0 <4.0.0'
 
   flutter_localizations:
@@ -29,7 +29,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: 1.0.4
+  flutter_lints: ^6.0.0
   mocktail: ^1.0.0
 
 platforms:
