@@ -1,6 +1,6 @@
 name: crowdin_sdk
 description: Crowdin Flutter SDK for instant translation delivery Over-The-Air directly to your application
-version: 0.8.1
+version: 0.8.2
 repository: https://every.gitlab.yandexcloud.net/every/crowdin_sdk
 homepage: https://every.gitlab.yandexcloud.net/every/crowdin_sdk
 

@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.8.2
+
+- feat: Support `useNamedParameters` option from gen-l10n
+- fix: update dependencies
+
 ## 0.8.1
 
 - fix: add undeclared placeholders to the placeholders list
