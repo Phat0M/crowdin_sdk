@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.9.0
+
+- refactor!: remove `synthetic-package` support from gen-l10n config parsing (always uses `output-dir`/`arb-dir`)
+- docs: update gen_l10n output/import guidance
+- docs: update example imports (no `flutter_gen` synthetic package)
+
 ## 0.8.2
 
 - feat: Support `useNamedParameters` option from gen-l10n
